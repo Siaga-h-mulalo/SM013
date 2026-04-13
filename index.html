@@ -98,7 +98,7 @@
         .type-writer { font-size: 1.3rem; font-weight: 600; color: var(--accent-green); margin: 1rem 0; min-height: 3rem; }
         .hero-lead { max-width: 700px; margin: 0 auto 2rem auto; color: var(--text-secondary); }
 
-        /* ================= ABOUT (Large image) ================= */
+        /* ================= ABOUT ================= */
         .about-grid { display: flex; gap: 3rem; align-items: center; flex-wrap: wrap; }
         .about-text { flex: 2; }
         .about-img { flex: 1; text-align: center; }
@@ -127,7 +127,7 @@
         .skill-tag i { font-size: 1.8rem; color: var(--accent-blue); }
         .skill-tag:hover { transform: translateY(-5px); border: 1px solid var(--accent-blue); }
 
-        /* ================= SERVICES (Horizontal, square images 240px) ================= */
+        /* ================= SERVICES ================= */
         .service-row {
             display: flex; align-items: center; gap: 2rem; background: var(--surface-2);
             padding: 1.5rem; border-radius: 1.5rem; margin-bottom: 1.5rem;
@@ -139,30 +139,28 @@
         .service-price { font-size: 1.8rem; font-weight: 800; color: var(--accent-blue); margin: 0.5rem 0; }
 
         /* ================= PROJECTS ================= */
-        .project-filter { margin-bottom: 2rem; }
-        .filter-input { width: 100%; padding: 0.8rem 1rem; border-radius: 2rem; border: 1px solid var(--border); background: var(--surface-2); color: var(--text-primary); }
-        .project-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; }
+        .project-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.8rem; }
         .project-card {
             background: var(--surface-2); border-radius: 1.5rem; overflow: hidden;
             border: 1px solid var(--border); transition: var(--transition); cursor: pointer;
         }
         .project-card:hover { transform: translateY(-8px); border-color: var(--accent-blue); }
-        .project-card img { width: 100%; height: 180px; object-fit: cover; }
+        .project-card img { width: 100%; height: 200px; object-fit: cover; }
         .project-info { padding: 1.5rem; }
-        .project-title { font-size: 1.2rem; font-weight: 800; display: flex; justify-content: space-between; align-items: center; }
+        .project-title { font-size: 1.3rem; font-weight: 800; display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
         .tech-pill {
             display: inline-block; background: var(--accent-blue-glow); color: var(--accent-blue);
             padding: 0.2rem 0.8rem; border-radius: 2rem; font-size: 0.7rem; font-weight: 700;
             margin-right: 0.5rem; margin-bottom: 0.5rem;
         }
 
-        /* ================= CERTIFICATE (single) ================= */
+        /* ================= CERTIFICATE ================= */
         .cert-single {
             background: var(--surface-2); border-radius: 1.5rem; padding: 2rem;
             text-align: center; cursor: pointer; max-width: 400px; margin: 0 auto;
             transition: var(--transition);
         }
-        .cert-single img { max-width: 100%; max-height: 200px; border-radius: 1rem; margin-top: 1rem; }
+        .cert-single img { max-width: 100%; max-height: 220px; border-radius: 1rem; margin-top: 1rem; }
 
         /* ================= CV ================= */
         .cv-box {
@@ -170,21 +168,43 @@
             text-align: center; border: 2px dashed var(--accent-blue);
         }
 
-        /* ================= CONTACT FORM ================= */
-        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
-        .contact-form input, .contact-form textarea {
-            width: 100%; padding: 0.8rem; border-radius: 1rem; border: 1px solid var(--border);
-            background: var(--bg); color: var(--text-primary); margin-bottom: 1rem; font-family: inherit;
+        /* ================= CONTACT (only direct channels) ================= */
+        .contact-channels {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            align-items: flex-start;
+            max-width: 500px;
+            margin: 0 auto;
         }
-        .btn {
-            padding: 0.8rem 1.8rem; border-radius: 2rem; text-decoration: none; font-weight: 700;
-            display: inline-flex; align-items: center; gap: 0.5rem; transition: var(--transition);
-            cursor: pointer; border: none;
+        .channel-link {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            padding: 1rem 1.8rem;
+            background: var(--surface-2);
+            border-radius: 1.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            width: 100%;
+            border: 1px solid var(--border);
         }
-        .btn-blue { background: var(--accent-blue); color: white; }
-        .btn-blue:hover { transform: translateY(-3px); box-shadow: 0 10px 20px var(--accent-blue-glow); }
-        .btn-green { border: 2px solid var(--accent-green); color: var(--accent-green); background: transparent; }
-        .btn-green:hover { background: var(--accent-green-soft); transform: translateY(-3px); }
+        .channel-link i {
+            font-size: 1.8rem;
+            width: 2rem;
+            text-align: center;
+        }
+        .channel-link:hover {
+            transform: translateX(8px);
+            border-color: var(--accent-blue);
+            background: var(--accent-blue-glow);
+        }
+        .channel-link.whatsapp i { color: #25D366; }
+        .channel-link.email i { color: #EA4335; }
+        .channel-link.linkedin i { color: #0077B5; }
+        .channel-link.github i { color: var(--text-primary); }
 
         /* ================= MODAL ================= */
         .modal-viewer {
@@ -203,14 +223,13 @@
             .hero-title { font-size: 2.5rem; }
             .service-row { flex-direction: column; text-align: center; }
             .service-img { width: 200px; height: 200px; }
-            .contact-grid { grid-template-columns: 1fr; }
             .about-grid { flex-direction: column; text-align: center; }
+            .contact-channels { width: 100%; }
         }
         .mobile-nav { display: none; }
         .mobile-nav a { color: var(--text-secondary); font-size: 1.4rem; }
         .mobile-nav a.active { color: var(--accent-blue); }
 
-        /* Reveal animation */
         .reveal { opacity: 0; transform: translateY(30px); transition: 0.7s ease; }
         .reveal.visible { opacity: 1; transform: translateY(0); }
     </style>
@@ -242,7 +261,7 @@
     <main class="main-content">
         <!-- HOME -->
         <section id="home" class="section-card hero-box reveal">
-            <div class="welcome-badge"> Hello! Welcome.</div>
+            <div class="welcome-badge">Hello! Welcome.</div>
             <div class="profile-container">
                 <img src="MySelfie.jpeg" alt="Mulalo Siaga" class="viewable-img" data-src="MySelfie.jpeg">
             </div>
@@ -250,22 +269,22 @@
             <div class="type-writer" id="typewriter"></div>
             <p class="hero-lead">Second-year Computer Science student passionate about building efficient systems, solving real-world tech problems, and helping others learn through code.</p>
             <div class="cta-group" style="display: flex; gap: 1rem; justify-content: center;">
-                <a href="#contact" class="btn btn-blue"><i class="fas fa-link"></i>Connect</a>
+                <a href="#contact" class="btn btn-blue"><i class="fas fa-link"></i> Connect</a>
                 <a href="#projects" class="btn btn-green"><i class="fas fa-eye"></i> Projects</a>
             </div>
         </section>
 
-        <!-- ABOUT with large image -->
+        <!-- ABOUT -->
         <section id="about" class="section-card reveal">
             <h2 class="heading">About Me</h2>
             <div class="about-grid">
                 <div class="about-text">
-                    <p><strong>I am a second-year Computer Science student at the University of Venda (UNIVEN)</strong> with a passion for using technology to solve real-world problems. I go beyond coding — I help people fix everyday tech issues: forgotten passwords, system slowdowns, software errors, and hardware challenges.</p>
+                    <p><strong>I am a second-year Computer Science student at the University of Venda (UNIVEN)</strong> with a passion for using technology to solve real-world problems. I go beyond coding , I help people fix everyday tech issues: forgotten passwords, system slowdowns, software errors, and hardware challenges.</p>
                     <p style="margin-top: 1rem;">I tutor Mathematics (Calculus) and Java programming, simplifying complex concepts into clear lessons. This has strengthened my communication and problem-solving skills.</p>
                     <p style="margin-top: 1rem;">My core skills include Object-Oriented Programming (Java, C++), frontend web development, and Human-Computer Interaction. I thrive in collaborative environments and have participated in hackathons, building practical solutions under pressure.</p>
                 </div>
                 <div class="about-img">
-                    <img src="AboutMe.jpeg" alt="Mulalo" class="viewable-img" data-src="AboutMe.jpeg">
+                    <img src="AboutMe.jpeg" alt="Mulalo portrait" class="viewable-img" data-src="AboutMe.jpeg">
                 </div>
             </div>
         </section>
@@ -274,12 +293,12 @@
         <section id="education" class="section-card reveal">
             <h2 class="heading">Education</h2>
             <div class="timeline-item">
-                <img src="Logo.jpeg" style="height: 50px; margin-bottom: 1rem; background: white; padding: 5px; border-radius: 8px;" onerror="this.style.display='none'">
+                <img src="Logo.jpeg" style="height: 50px; margin-bottom: 1rem; background: white; padding: 5px; border-radius: 8px;" onerror="this.style.display='none'" alt="uni logo">
                 <div class="item-meta">2025 – Present</div>
                 <h3 class="item-title">BSc Computer Science (2nd Year)</h3>
                 <p><strong>University of Venda</strong></p>
                 <ul style="margin-top: 0.8rem; color: var(--text-secondary); margin-left: 1.2rem;">
-                    <li>GPA: 3.9 / 4.0 (Dean's List candidate)</li>
+                    <li>2025</li> - Present
                     <li>Distinctions: Mathematics, Programming, Computer Tech, Communication</li>
                     <li>UNIVEN × CSIR Hackathon 2025 – educational access prototype</li>
                 </ul>
@@ -290,7 +309,7 @@
         <section id="experience" class="section-card reveal">
             <h2 class="heading">Experience</h2>
             <div class="timeline-item">
-                <div class="item-meta">2025 -Present</div>
+                <div class="item-meta">2025 - Present</div>
                 <h3 class="item-title">Academic Tutor (Maths & Java)</h3>
                 <p>→ 30+ students tutored, average grade improvement 20%<br>→ Designed Java OOP exercises boosting one student from 55% to 78% in 5 weeks</p>
             </div>
@@ -316,7 +335,7 @@
             </div>
         </section>
 
-        <!-- SERVICES (horizontal, square images 240px) -->
+        <!-- SERVICES -->
         <section id="services" class="section-card reveal">
             <h2 class="heading">Services & Pricing</h2>
             <div class="service-row">
@@ -325,7 +344,7 @@
                     <h3><i class="fas fa-chalkboard-user"></i> Tutoring</h3>
                     <div class="service-price">R150 - R300</div>
                     <p>Java OOP & Calculus</p>
-                    <div class="service-desc">✅ Personalized lessons • ✅ Grade improvement</div>
+                    <div class="service-desc">Personalized lessons • Grade improvement</div>
                 </div>
             </div>
             <div class="service-row">
@@ -334,7 +353,7 @@
                     <h3><i class="fas fa-laptop-code"></i> Tech Fix</h3>
                     <div class="service-price">R150 - R350</div>
                     <p>Password reset, driver fixes, performance optimization</p>
-                    <div class="service-desc">✅ Fast • ✅ Remote/On-site</div>
+                    <div class="service-desc">Fast • Remote/On-site</div>
                 </div>
             </div>
             <div class="service-row">
@@ -343,21 +362,18 @@
                     <h3><i class="fas fa-video"></i> Editing</h3>
                     <div class="service-price">R50 - R100</div>
                     <p>Photo retouch, short video editing, content polish</p>
-                    <div class="service-desc">✅ High quality • ✅ Quick delivery</div>
+                    <div class="service-desc">High quality • Quick delivery</div>
                 </div>
             </div>
         </section>
 
-        <!-- PROJECTS with filter (UPDATED REAL DESCRIPTIONS) -->
+        <!-- PROJECTS (no search) -->
         <section id="projects" class="section-card reveal">
             <h2 class="heading">Featured Projects</h2>
-            <div class="project-filter">
-                <input type="text" id="projectSearch" class="filter-input" placeholder="🔍 Filter by title or technology...">
-            </div>
             <div id="projectsContainer" class="project-grid"></div>
         </section>
 
-        <!-- CERTIFICATE (only Hackathon) -->
+        <!-- CERTIFICATE -->
         <section id="certificate" class="section-card reveal">
             <h2 class="heading">Certification</h2>
             <div class="cert-single" id="hackCertBtn">
@@ -383,21 +399,22 @@
             </div>
         </section>
 
-        <!-- CONTACT -->
+        <!-- CONTACT (No form, only direct channels) -->
         <section id="contact" class="section-card reveal">
             <h2 class="heading">Let's Connect</h2>
-           
-                </form>
-                <div>
-                    <h4 style="margin-bottom: 1rem;">Direct Channels</h4>
-                    <p style="margin-bottom: 1.5rem;">I respond within 24 hours.</p>
-                    <div style="display: flex; flex-direction: column; gap: 0.8rem;">
-                        <a href="https://wa.me/27617250769" target="_blank" style="text-decoration: none; color: #25D366; font-weight: 700;"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-                        <a href="mailto:mulalosiaga743@gmail.com" style="text-decoration: none; color: #EA4335; font-weight: 700;"><i class="fas fa-envelope"></i> mulalosiaga743@gmail.com</a>
-                        <a href="https://www.linkedin.com/in/mulalo-siaga-14181b3a0" target="_blank" style="text-decoration: none; color: #0077B5; font-weight: 700;"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                        <a href="https://github.com/Siaga-h-mulalo" target="_blank" style="text-decoration: none; color: var(--text-primary); font-weight: 700;"><i class="fab fa-github"></i> GitHub</a>
-                    </div>
-                </div>
+            <div class="contact-channels">
+                <a href="https://wa.me/27617250769" target="_blank" class="channel-link whatsapp">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                </a>
+                <a href="mailto:mulalosiaga743@gmail.com" class="channel-link email">
+                    <i class="fas fa-envelope"></i> mulalosiaga743@gmail.com
+                </a>
+                <a href="https://www.linkedin.com/in/mulalo-siaga-14181b3a0" target="_blank" class="channel-link linkedin">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+                <a href="https://github.com/Siaga-h-mulalo" target="_blank" class="channel-link github">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
             </div>
         </section>
     </main>
@@ -417,7 +434,7 @@
 </div>
 
 <script>
-    // Projects Data with REAL descriptions (provided by user)
+    // Projects Data (no filter/search)
     const projectsData = [
         { 
             title: "Kha Ri Gude", 
@@ -442,15 +459,14 @@
         }
     ];
 
-    function renderProjects(filter = "") {
+    function renderAllProjects() {
         const container = document.getElementById("projectsContainer");
-        const filtered = projectsData.filter(p => p.title.toLowerCase().includes(filter.toLowerCase()) || p.tech.join(" ").toLowerCase().includes(filter.toLowerCase()));
-        container.innerHTML = filtered.map(p => `
+        container.innerHTML = projectsData.map(p => `
             <div class="project-card" onclick="window.open('${p.url}', '_blank')">
                 <img src="${p.img}" alt="${p.title}" loading="lazy">
                 <div class="project-info">
                     <div class="project-title"><span>${p.title}</span> <span style="background:var(--accent-blue); color:white; padding:0.2rem 0.6rem; border-radius:2rem; font-size:0.7rem;">Live</span></div>
-                    <p style="margin:0.5rem 0; font-size:0.9rem; line-height:1.5;">${p.desc}</p>
+                    <p style="margin:0.75rem 0; font-size:0.95rem; line-height:1.5; color:var(--text-secondary);">${p.desc}</p>
                     <div>${p.tech.map(t => `<span class="tech-pill">${t}</span>`).join('')}</div>
                 </div>
             </div>
@@ -458,7 +474,7 @@
     }
 
     // Typing effect
-    const roles = ["BSc Computer Science Student &", "Java/C++ Tutor", "Tech Consultant"];
+    const roles = ["BSc Computer Science Student", "Java/C++ Tutor", "Tech Consultant"];
     let idx = 0, ch = 0, isDeleting = false;
     const typeEl = document.getElementById("typewriter");
     function typeLoop() {
@@ -467,7 +483,7 @@
         if (!isDeleting && ch <= current.length) {
             typeEl.textContent = current.substring(0, ch);
             ch++;
-            setTimeout(typeLoop, 100);
+            setTimeout(typeLoop, 110);
         } else if (isDeleting && ch >= 0) {
             typeEl.textContent = current.substring(0, ch);
             ch--;
@@ -475,7 +491,7 @@
         } else {
             isDeleting = !isDeleting;
             if (!isDeleting) idx = (idx + 1) % roles.length;
-            setTimeout(typeLoop, 500);
+            setTimeout(typeLoop, 600);
         }
     }
     typeLoop();
@@ -484,12 +500,12 @@
     const modal = document.getElementById("imageModal");
     const modalImg = document.getElementById("modalImage");
     function openModal(src) { modalImg.src = src; modal.classList.add("open"); }
-    function closeModal() { modal.classList.remove("open"); }
+    window.closeModal = function() { modal.classList.remove("open"); };
     document.querySelectorAll(".viewable-img").forEach(el => {
         el.addEventListener("click", (e) => {
             e.stopPropagation();
             const src = el.getAttribute("data-src") || el.src;
-            if (src) openModal(src);
+            if (src && src !== "#") openModal(src);
         });
     });
     document.getElementById("hackCertBtn")?.addEventListener("click", () => {
@@ -497,11 +513,6 @@
         if (certImg) openModal(certImg.src);
     });
     modal.addEventListener("click", (e) => { if (e.target === modal) closeModal(); });
-
-    // Project filter
-    const searchInput = document.getElementById("projectSearch");
-    searchInput.addEventListener("input", (e) => renderProjects(e.target.value));
-    renderProjects();
 
     // Dark mode toggle
     const themeBtn = document.getElementById("themeBtn");
@@ -534,27 +545,6 @@
         });
     });
 
-    // Contact form
-    const contactForm = document.getElementById("contactForm");
-    const statusDiv = document.getElementById("formStatus");
-    contactForm.addEventListener("submit", (e) => {
-        e.preventDefault();
-        const name = document.getElementById("name").value.trim();
-        const email = document.getElementById("email").value.trim();
-        const msg = document.getElementById("message").value.trim();
-        if (!name || !email || !msg) {
-            statusDiv.innerHTML = "<span style='color:red;'>All fields required.</span>";
-            return;
-        }
-        if (!email.includes("@")) {
-            statusDiv.innerHTML = "<span style='color:red;'>Valid email required.</span>";
-            return;
-        }
-        statusDiv.innerHTML = "<span style='color:var(--accent-green);'>✨ Message sent! I'll reply within 24h.</span>";
-        contactForm.reset();
-        setTimeout(() => statusDiv.innerHTML = "", 3000);
-    });
-
     // Smooth scroll for nav links
     document.querySelectorAll(".nav-menu a, .mobile-nav a").forEach(anchor => {
         anchor.addEventListener("click", function(e) {
@@ -566,6 +556,8 @@
             }
         });
     });
+
+    renderAllProjects();
 </script>
 </body>
 </html>
